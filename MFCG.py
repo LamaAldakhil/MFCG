@@ -8,11 +8,11 @@ import gdown
 
 url1 = 'https://drive.google.com/uc?id=10MH20a4ohol_ESXmajt6Vmn_uxHIebLE'
 output1 = 'Weights for Fruit Classification.pth'
-gdown.download(url, output, quiet=False)
+gdown.download(url1, output1, quiet=False)
 
 url2 = 'https://drive.google.com/uc?id=1-rHdFq2GXLh21DF1fWWtuUj98nzk6BL3'
 output2 = 'Weights for Quality Classification.pth'
-gdown.download(url, output, quiet=False)
+gdown.download(url2, output2, quiet=False)
 
 # Define the preprocessing steps
 preprocess = v2.Compose([
