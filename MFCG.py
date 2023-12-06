@@ -4,6 +4,15 @@ from PIL import Image
 import torch
 from torchvision.transforms import v2
 from torch import nn
+import gdown
+
+url1 = 'https://drive.google.com/uc?id=10MH20a4ohol_ESXmajt6Vmn_uxHIebLE'
+output1 = 'Weights for Fruit Classification.pth'
+gdown.download(url, output, quiet=False)
+
+url2 = 'https://drive.google.com/uc?id=1-rHdFq2GXLh21DF1fWWtuUj98nzk6BL3'
+output2 = 'Weights for Quality Classification.pth'
+gdown.download(url, output, quiet=False)
 
 # Define the preprocessing steps
 preprocess = v2.Compose([
@@ -31,7 +40,7 @@ num_features = model_fruit_type.classifier[1].in_features
 # Replace the final linear layer with a new one
 model_fruit_type.classifier[1] = nn.Linear(num_features, num_classes)
 
-model_fruit_type.load_state_dict(torch.load('D:/Documents/Best model for Fruit Classification/best_model.pth'))
+model_fruit_type.load_state_dict(torch.load(output1, map_location=device))
 
 # Number of classes in your dataset
 num_classes = 3
@@ -42,7 +51,7 @@ num_features = model_fruit_quality.classifier[1].in_features
 # Replace the final linear layer with a new one
 model_fruit_quality.classifier[1] = nn.Linear(num_features, num_classes)
 
-model_fruit_quality.load_state_dict(torch.load('D:/Documents/Best Model for Fruit Quality Classification/best_model.pth'))
+model_fruit_quality.load_state_dict(torch.load(output2, map_location=device))
 
 # Load your models to the device
 model_fruit_type = model_fruit_type.to(device)
