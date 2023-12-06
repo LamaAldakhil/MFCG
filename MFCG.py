@@ -87,7 +87,7 @@ def predict(image):
     prob_fruit_quality = torch.nn.functional.softmax(outputs_fruit_quality, dim=1)[0] * 100
     return predicted_fruit_label, predicted_quality_label, prob_fruit_type[predicted_fruit_type.item()].item(), prob_fruit_quality[predicted_fruit_quality.item()].item()
 
-header_html = "<img src=https://github.com/LamaAldakhil/MFCG/blob/main/Header.png?raw=true' style='height:250px;display: block;margin-left: auto;margin-right: auto;width: 50%;'/>"
+header_html = "<img src=https://drive.google.com/uc?id=1an9i88Uy80EELngKE85mJQxUf3a4ODGH' style='height:250px;display: block;margin-left: auto;margin-right: auto;width: 100%;'/>"
 st.markdown(header_html, unsafe_allow_html=True)
 st.title("Multi-Fruit Classification and Grading")
 uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
