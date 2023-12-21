@@ -6,11 +6,11 @@ from torchvision.transforms import v2
 from torch import nn
 import gdown
 
-url1 = 'https://drive.google.com/uc?id=1094mKT9YXUttlxTRSZzXwLq-pqgTKvMZ'
+url1 = 'https://drive.google.com/uc?id=1-KpvTPVnDdsOLyX-2e7BRNnsjdA4d1V_'
 output1 = 'Weights for Fruit Classification.pth'
 gdown.download(url1, output1, quiet=False)
 
-url2 = 'https://drive.google.com/uc?id=11jqBG2Ly_e50erTV52ygXNl_DgxZWDfd'
+url2 = 'https://drive.google.com/uc?id=15n8IbK9lHyYUQsiuG0P8rkDs5d8zaO4r'
 output2 = 'Weights for Quality Classification.pth'
 gdown.download(url2, output2, quiet=False)
 
